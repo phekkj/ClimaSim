@@ -1,101 +1,255 @@
-/* ===== Reset básico ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== Container principal ===== */
-.cointainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centraliza horizontalmente */
-    justify-content: flex-start;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
-    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.cointainer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
     text-align: center;
 }
 
-/* ===== Título ===== */
-.cointainer h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
+#titulo {
     color: #333;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* ===== Formulário ===== */
 .form {
     display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
 }
 
-.form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 250px;
+#input-name {
+    flex: 1;
+    max-width: 300px;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.form button {
-    padding: 10px 15px;
-    border-radius: 5px;
+#input-name:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#search {
+    width: 50px;
+    height: 50px;
     border: none;
-    background-color: #007bff;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.form button:hover {
-    background-color: #0056b3;
+#search:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* ===== Carousel ===== */
+#search::before {
+    content: "🔍";
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .carousel {
-    width: 80%;
-    max-width: 600px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.carousel .carousel-item img {
-    border-radius: 8px;
-    height: 260px;
+.carousel-inner {
+    border-radius: 15px;
+}
+
+.carousel-item img {
+    height: 250px;
     object-fit: cover;
+    border-radius: 15px;
 }
 
-/* ===== Dados do clima ===== */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    background: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-control-prev {
+    left: 15px;
+}
+
+.carousel-control-next {
+    right: 15px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 25px;
+    height: 25px;
+    background-size: 100%, 100%;
+    background-image: none;
+    position: relative;
+}
+
+.carousel-control-prev-icon:after {
+    content: '◀';
+    font-size: 25px;
+    color: #667eea;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carousel-control-next-icon:after {
+    content: '▶';
+    font-size: 25px;
+    color: #667eea;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .data {
-    background-color: #007bff;
-    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    color: white;
+}
+
+#city {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+#temp, #description, #umidity, #wind, #description {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    color: #333;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.data h2 {
-    font-size: 1.5rem;
+#temp span, #umidity span, #wind span {
+    font-weight: 600;
+    color: white;
 }
 
-.data p {
-    font-size: 1rem;
+#descSpan {
+    font-style: italic;
+    color: #9fadeb;
+    font-size: 1.2rem;
 }
 
-/* ===== Responsividade ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .cointainer {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    #titulo {
+        font-size: 2rem;
+    }
+    
     .form {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
     }
-
-    .form input {
-        width: 100%;
+    
+    #input-name {
+        max-width: 100%;
+        margin-bottom: 15px;
     }
+    
+    .carousel-item img {
+        height: 200px;
+    }
+    
+    .data {
+        padding: 20px;
+    }
+    
+    #city {
+        font-size: 1.5rem;
+    }
+}
 
-    .carousel {
-        width: 100%;
+@media (max-width: 480px) {
+    #titulo {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-item img {
+        height: 150px;
+    }
+    
+    #city {
+        font-size: 1.3rem;
+    }
+    
+    #temp, #description, #umidity, #wind {
+        font-size: 1rem;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-control-prev-icon:after,
+    .carousel-control-next-icon:after {
+        font-size: 20px;
     }
 }

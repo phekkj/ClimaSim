@@ -6,7 +6,7 @@ const searchBtn = document.getElementById("search");
 const TempE = document.querySelector("#temp span");
 const CityE = document.querySelector("#city");
 const UmidityE = document.querySelector("#umidity span");
-const DescriptionE = document.querySelector("#description");
+const DescriptionE = document.querySelector("#description span");
 const WindE = document.querySelector("#wind span");
 
 function search() {

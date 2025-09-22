@@ -102,21 +102,24 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-50%);
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    top: 50%;
-    transform: translateY(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     opacity: 0.9;
     transition: all 0.3s ease;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
     opacity: 1;
-    background: white;
     transform: translateY(-50%) scale(1.05);
 }
 
@@ -132,13 +135,11 @@ body {
 .carousel-control-next-icon {
     width: 25px;
     height: 25px;
-    background-size: 100%, 100%;
-    background-image: none;
+    background: none;
     position: relative;
 }
 
 .carousel-control-prev-icon:after {
-    content: '◀';
     font-size: 25px;
     color: #667eea;
     position: absolute;
@@ -148,7 +149,6 @@ body {
 }
 
 .carousel-control-next-icon:after {
-    content: '▶';
     font-size: 25px;
     color: #667eea;
     position: absolute;
@@ -191,6 +191,19 @@ body {
     color: #9fadeb;
     font-size: 1.2rem;
 }
+
+.alt-text {
+    position: absolute;
+    bottom: 42.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
 
 @media (max-width: 768px) {
     .cointainer {
